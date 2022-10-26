@@ -1,0 +1,232 @@
+<html>
+
+
+<body bgcolor ="gold">
+
+<style>
+
+
+
+
+
+#myInput {
+  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 40%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myInput2 {
+  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 40%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+
+#myTable {
+  border-collapse: collapse; /* Collapse borders */
+  width: 50%; /* Full-width */
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 18px; /* Increase font-size */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#myTable th, #myTable td {
+  text-align: left; /* Left-align text */
+  padding: 12px; /* Add padding */
+}
+
+#myTable tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #f1f1f1;
+}
+
+a img { display:none; }
+a:hover img { display:block; }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  float: right;
+}
+
+a {
+  display: block;
+  padding: 8px;
+  background-color: #dddddd;
+}
+
+</style>
+
+
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+function myFunction2() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput2");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
+
+<body bgcolor="gold">
+<H2>Movie Listing</H2>
+
+ <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Movie Names..">
+ <p></p>
+ <input type="text" id="myInput2" onkeyup="myFunction2()" placeholder="Search for Movie Genre..">
+  <p></p>
+  <p></p>
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:30%;">Movie</th>
+    <th style="width:20%;">Genre</th>
+  </tr>
+  <tr>
+    <td><a href="#">Deadpool<img src="images/deadpool_s.jpg" /></a></td>	
+    <td>Action/Comedy</td>
+  </tr>
+  <tr>
+    <td><a href="#">Ironman<img src="images/Ironman.jpg"WIDTH="200" HEIGHT="300" /></a></td>
+    <td>Action</td>
+  </tr>
+  <tr>
+    <td><a href="#">Then Batman<img src="images/batman.jpg"WIDTH="200" HEIGHT="300" /></a></td>
+    <td>Action</td>
+  </tr>
+  <tr>
+    <td><a href="#">Dune<img src="images/dune.jpg"WIDTH="200" HEIGHT="300" /></a></td>
+    <td>Action</td>
+  </tr>
+  <tr>
+    <td><a href="#">Black Widow<img src="images/blackwidow.jpg"WIDTH="200" HEIGHT="300" /></a></td>
+    <td>Action</td>
+  </tr>
+  <tr>
+    <td><a href="#">Black Panter<img src="images/blackpanther.jpg"WIDTH="200" HEIGHT="300" /></a></td>
+    <td>Action</td>
+  </tr>
+  <tr>
+    <td><a href="#">Black Adam<img src="images/blackadam.jpg"WIDTH="200" HEIGHT="300" /></a></td>
+    <td>Action</td>
+  </tr>
+  <tr>
+    <td><a href="#">Deadpool 2<img src="images/deadpool2.jfif"WIDTH="200" HEIGHT="300" /></a></td>
+    <td>Action/Comedy</td>
+  </tr>
+  <tr>
+    <td><a href="#">Dr.Strange 2<img src="images/drstrange.webp"WIDTH="200" HEIGHT="300" /></a></td>
+    <td>Action/Horror/Science Fiction</td>
+  </tr>
+  <tr>
+    <td><a href="#">Spiderman 3<img src="images/spidermannwh.jpg"WIDTH="200" HEIGHT="300" /></a></td>
+    <td>Action/Science Fiction</td>
+  </tr>
+  <tr>
+    <td><a href="#">Aquaman<img src="images/aquaman.jpeg"WIDTH="200" HEIGHT="300" /></a></td>
+    <td>Action/Science Fiction</td>
+  </tr>
+  <tr>
+    <td><a href="#">The Adam Project<img src="images/adamproject.jfif"WIDTH="200" HEIGHT="300" /></a></td>
+    <td>Action/Science Fiction</td>
+  </tr>
+  <tr>
+    <td><a href="#">Minions 2<img src="images/minions2.jpg"WIDTH="200" HEIGHT="300" /></a></td>
+    <td>Comedy/Animation</td>
+  </tr>
+  <tr>
+    <td><a href="#">Scream<img src="images/scream.jpg"WIDTH="200" HEIGHT="300" /></a></td>
+    <td>Horror</td>
+  </tr>
+  <tr>
+    <td><a href="#">Chucky<img src="images/chucky.jpg"WIDTH="200" HEIGHT="300" /></a></td>
+    <td>Horror</td>
+  </tr>
+<td>
+<a href="#">Friday the 13th<img src="images/friday13th.jpg" WIDTH="200" HEIGHT="300"/></a></td>
+    <td>Horror</td>
+  </tr>
+   <tr>
+    <td><a href="#">The Conjuring<img src="images/thecon.jfif"WIDTH="200" HEIGHT="300" /></a></td>
+    <td>Horror</td>
+  </tr>
+  <tr>
+    <td><a href="#">Jurassic Park<img src="images/park.jpg" WIDTH="200" HEIGHT="300"/></a></td>
+    <td>Science Fiction</td>
+  </tr>
+  <tr>
+    <td><a href="#">Beauty And The Beast<img src="images/BAB.jfif"WIDTH="200" HEIGHT="300" /></a></td>
+    <td>Romance</td>
+  </tr>
+  <tr>
+    <td><a href="#">Five Feet Apart<img src="images/FFA.jfif"WIDTH="200" HEIGHT="300" /></a></td>
+    <td>Romance</td>
+  </tr>
+  <tr>
+    <td><a href="#">Crazy Rich Asains<img src="images/CRA.png"WIDTH="200" HEIGHT="300" /></a></td>
+    <td>Romance/Comedy</td>
+  </tr>
+ 
+</table>
+
+
+</body>
+
+</html>
